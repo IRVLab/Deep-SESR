@@ -21,6 +21,7 @@
 - Weights for Deep SESR 2x with 1D FENet (trained on UFO-120) are provided in models/
 	- HDF5: deep_sesr_2x_1d.h5 file; use [test_sesr_Keras.py](test_sesr_Keras.py)
 	- Protobuf: deep_sesr_2x_1d.pb file; use [test_sesr_TF.py](test_sesr_TF.py) 
+- *This repository contains modules at the time of publication; sub-sequent updates can be found [here](https://github.com/xahidbuffon/Deep-SESR)* 
 
 
 ### UFO-120 dataset
