@@ -6,7 +6,6 @@
 #    - Underwater Image Quality Measure (UIQM)
 # Maintainer: Jahid (email: islam034@umn.edu)
 # Interactive Robotics and Vision Lab (http://irvlab.cs.umn.edu/)
-# // usage: for academic and educational purposes only
 """
 ## python libs
 import os
@@ -23,7 +22,7 @@ im_w, im_h = 320, 240
 
 ## data paths
 REAL_im_dir = "data/sample_test_ufo/lrd/"  # real/input im-dir with {f.ext}
-GEN_im_dir  = "data/output/keras_out/"  # generated im-dir with {f_gen.ext}
+GEN_im_dir  = "data/output/tf_out/"  # generated im-dir with {f_SESR/EN.ext}
 GTr_im_dir  = "data/sample_test_ufo/hr/"  # ground truth im-dir with {f.ext}
 REAL_paths, GEN_paths = getPaths(REAL_im_dir), getPaths(GEN_im_dir)
 
@@ -69,6 +68,7 @@ def measure_SSIM(GT_dir, Gen_dir):
             assert (r_im.shape==g_im.shape), "The images should be of same-size"
             ssim = getSSIM(r_im, g_im)
             ssims.append(ssim)
+
     return np.array(ssims)
 
 

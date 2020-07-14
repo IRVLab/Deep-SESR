@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 """
 # > Script for evaluating 2x SESR 
-#    - Paper: 
+#    - Paper: https://arxiv.org/pdf/2002.01155.pdf 
 # Maintainer: Jahid (email: islam034@umn.edu)
 # Interactive Robotics and Vision Lab (http://irvlab.cs.umn.edu/)
-# // usage: for academic and educational purposes only
 """
 import os
 import time
@@ -67,8 +66,9 @@ lr_shape = (lr_height, lr_width, 3)
 hr_shape = (hr_height, hr_width, 3)
 
 ## for testing arbitrary local data
-data_dir = "data/test_mixed/"
 data_dir = "data/sample_test_ufo/lrd/"
+#data_dir = "data/test_mixed/"
+
 test_paths = getPaths(data_dir)
 print ("{0} test images are loaded".format(len(test_paths)))
 
@@ -78,7 +78,7 @@ if not os.path.exists(samples_dir): os.makedirs(samples_dir)
 
 # testing loop
 times = []; 
-for img_path in test_paths[:50]:
+for img_path in test_paths:
     # prepare data
     img_name = ntpath.basename(img_path).split('.')[0]
     img_lrd = misc.imread(img_path, mode='RGB').astype(np.float)  
